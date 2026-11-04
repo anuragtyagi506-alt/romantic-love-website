@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>हमारी यादें ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/memories.css" />
+</head>
+<body>
+  <div class="memories-effects" aria-hidden="true"></div>
+  <audio id="memories-music" preload="auto" hidden></audio>
+
+  <main class="memories-page">
+    <a class="memories-back" href="emotions.html" aria-label="Back to emotions page">← मेरी भावनाएं</a>
+
+    <header class="memories-header">
+      <span>💞</span>
+      <h1>हमारी यादें ❤️</h1>
+    </header>
+
+    <article class="memory-letter">
+      <div class="letter-decoration left">🌹</div>
+      <div class="letter-decoration right">🌹</div>
+
+      <p class="memory-line">पता नहीं आज क्या-क्या लिखना चाहता था, दिल में बहुत सारी बातें थीं, बहुत कुछ कहना चाहता था, लेकिन शायद शब्द कम पड़ रहे हैं।</p>
+      <p class="memory-line">बस इतना कहना चाहता हूँ कि <strong>I'm Sorry For Everything.</strong></p>
+      <p class="memory-line">मुझसे जो भी गलतियाँ हुई हैं, जानबूझकर या अनजाने में, उन सभी के लिए दिल से माफी चाहता हूँ। मेरी हर गलती को एक आखिरी बार माफ कर दो।</p>
+      <p class="memory-line">मैं तुमसे वादा करता हूँ कि आगे से कभी ऐसी कोई गलती नहीं होगी। मैं अपनी गलतियों को समझूँगा और खुद को बेहतर बनाने की पूरी कोशिश करूँगा।</p>
+      <p class="memory-line">तुम मेरे लिए बहुत खास हो। मैं तुम्हें खोना नहीं चाहता। तुम्हारी मुस्कान, तुम्हारी खुशी और तुम्हारा साथ मेरे लिए बहुत मायने रखता है।</p>
+      <p class="memory-line">बस एक आखिरी बार मुझे माफ कर दो। ❤️</p>
+
+      <div class="love-lines">
+        <p>I LOVE YOU SO MUCH MY WIFE ❤️</p>
+        <p>I LOVE YOU JAAN ❤️</p>
+        <p>I LOVE YOU BUBU ❣️</p>
+        <p>SORRY FOR EVERYTHING...</p>
+      </div>
+    </article>
+
+    <div class="big-heart" aria-label="Love heart">❤️</div>
+    <p class="special-line">कुछ रिश्ते बहुत खास होते हैं... और तुम उनमें सबसे खास हो।</p>
+    <button id="forgive-me-button" class="forgive-me-button" type="button">मुझे माफ कर दोगी? 🥺</button>
+  </main>
+
+  <div id="forgive-popup" class="forgive-popup" role="dialog" aria-modal="true" aria-labelledby="forgive-popup-text" hidden>
+    <div class="popup-card">
+      <button id="close-forgive-popup" class="popup-close" type="button" aria-label="Close popup">×</button>
+      <div class="popup-heart">❤️</div>
+      <p id="forgive-popup-text">तुम्हारी मुस्कान मेरे लिए सबसे कीमती है। ❤️</p>
+      <button id="popup-ok" class="popup-ok" type="button">Thank You So Much, I Love You Bubu ❤️</button>
+    </div>
+  </div>
+
+  <script src="js/memories.js?v=2"></script>
+</body>
+</html>

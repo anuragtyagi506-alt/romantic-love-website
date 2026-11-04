@@ -1,0 +1,147 @@
+@import url("style.css");
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Noto Sans Devanagari", "Plus Jakarta Sans", sans-serif;
+  color: #87364f;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.92), transparent 26%),
+    radial-gradient(circle at 82% 78%, rgba(255,150,184,.48), transparent 30%),
+    linear-gradient(145deg, #fff7fa 0%, #ffd7e7 55%, #ffc1d6 100%);
+}
+
+.emotion-hearts { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.emotion-hearts span {
+  position: absolute;
+  bottom: -30px;
+  color: rgba(225, 61, 111, .38);
+  animation: emotionFloat linear infinite;
+}
+@keyframes emotionFloat {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  12% { opacity: 1; }
+  100% { transform: translateY(-110vh) translateX(24px) rotate(30deg); opacity: 0; }
+}
+
+.emotions-page {
+  position: relative;
+  z-index: 1;
+  width: min(820px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 74px 0 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-emotions {
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top));
+  left: max(16px, env(safe-area-inset-left));
+  z-index: 10;
+  padding: 10px 15px;
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: 999px;
+  color: #87364f;
+  text-decoration: none;
+  font-weight: 800;
+  background: rgba(255,255,255,.84);
+  box-shadow: 0 10px 24px rgba(157,49,90,.14);
+  backdrop-filter: blur(12px);
+}
+
+.emotions-header { text-align: center; margin-bottom: 24px; }
+.header-heart { display: block; font-size: 3rem; animation: heartPulse 1.8s ease-in-out infinite; }
+.emotions-header p { margin: 4px 0; font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 800; }
+.emotions-header h1 {
+  margin: 0;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  line-height: 1.05;
+}
+
+.emotion-card {
+  position: relative;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: clamp(24px, 5vw, 42px);
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.86);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255,255,255,.94), rgba(255,235,242,.92));
+  box-shadow: 0 18px 44px rgba(157,49,90,.16);
+}
+.emotion-card.animate-card { animation: cardFadeIn .8s cubic-bezier(.2,.7,.2,1) both; }
+.emotion-card h2 {
+  margin: 8px 0 14px;
+  font-family: "Great Vibes", "Noto Sans Devanagari", cursive;
+  font-size: clamp(1.65rem, 6vw, 2.5rem);
+  line-height: 1.25;
+}
+.emotion-card p {
+  margin: 0;
+  font-size: clamp(.98rem, 3vw, 1.12rem);
+  line-height: 1.85;
+  font-weight: 500;
+}
+.card-icon { display: inline-block; font-size: 2rem; animation: heartPulse 2.3s ease-in-out infinite; }
+.card-heart {
+  position: absolute;
+  right: 18px;
+  bottom: 8px;
+  color: rgba(233,77,131,.18);
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  animation: cardHeart 3.5s ease-in-out infinite;
+}
+.final-card {
+  border: 2px solid rgba(255,255,255,.94);
+  background: linear-gradient(135deg, #fff 0%, #ffe5ef 48%, #ffc0d7 100%);
+  box-shadow: 0 22px 55px rgba(211,54,105,.24), 0 0 30px rgba(255,255,255,.7) inset;
+}
+.final-card h2 { color: #c52d63; }
+
+.forever-text {
+  margin: 16px 0 12px;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(1.55rem, 7vw, 2.35rem);
+  animation: foreverGlow 2.4s ease-in-out infinite;
+}
+.replay-button {
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 999px;
+  padding: 12px 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff91b7, #e9477e);
+  box-shadow: 0 12px 28px rgba(233,77,131,.28);
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.replay-button:hover { transform: translateY(-2px) scale(1.02); }
+.replay-button:active { transform: scale(.97); }
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heartPulse { 50% { transform: scale(1.13); } }
+@keyframes cardHeart { 50% { transform: translateY(-7px) scale(1.08); } }
+@keyframes foreverGlow { 50% { text-shadow: 0 0 16px rgba(233,77,131,.42); transform: scale(1.02); } }
+
+@media (max-width: 600px) {
+  .emotions-page { width: min(100% - 18px, 820px); padding-top: 66px; }
+  .back-emotions { font-size: .78rem; padding: 8px 11px; }
+  .emotion-card { border-radius: 20px; margin-bottom: 14px; }
+  .emotion-card p { line-height: 1.75; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}

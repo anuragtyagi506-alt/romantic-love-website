@@ -1,0 +1,109 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Noto Sans Devanagari", "Plus Jakarta Sans", sans-serif;
+  color: #7b314c;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255,255,255,.95), transparent 28%),
+    radial-gradient(circle at 82% 82%, rgba(255,151,187,.42), transparent 32%),
+    linear-gradient(145deg, #fff9fb, #ffe0eb 58%, #ffc9dc);
+}
+
+.memories-effects { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.memories-effects span { position: absolute; bottom: -40px; color: rgba(224,68,119,.38); animation: memoryFloat linear infinite; }
+@keyframes memoryFloat { 100% { transform: translate3d(28px,-110vh,0) rotate(32deg); opacity: 0; } }
+
+.memories-page {
+  position: relative;
+  z-index: 1;
+  width: min(860px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 76px 0 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.memories-back {
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top));
+  left: max(16px, env(safe-area-inset-left));
+  z-index: 10;
+  padding: 10px 15px;
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: 999px;
+  color: #87364f;
+  text-decoration: none;
+  font-weight: 800;
+  background: rgba(255,255,255,.84);
+  box-shadow: 0 10px 24px rgba(157,49,90,.14);
+  backdrop-filter: blur(12px);
+}
+.memories-header { text-align: center; margin-bottom: 20px; }
+.memories-header span { display: block; font-size: 2.8rem; animation: softPulse 2.3s ease-in-out infinite; }
+.memories-header h1 { margin: 0; font-family: "Great Vibes", "Noto Sans Devanagari", cursive; color: #a62d58; font-size: clamp(3rem, 10vw, 5rem); line-height: 1.05; }
+
+.memory-letter {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 30px;
+  padding: clamp(26px, 5vw, 48px);
+  background:
+    linear-gradient(rgba(255,255,255,.88), rgba(255,247,249,.94)),
+    repeating-linear-gradient(0deg, transparent 0, transparent 31px, rgba(220,115,150,.09) 32px);
+  box-shadow: 0 24px 60px rgba(157,49,90,.18);
+}
+.memory-line { margin: 0 0 20px; line-height: 1.9; font-size: clamp(.98rem, 3vw, 1.12rem); opacity: 0; animation: lineFade .9s ease forwards; }
+.memory-line strong { color: #d43a70; }
+.letter-decoration { position: absolute; top: 12px; font-size: 1.8rem; opacity: .72; }
+.letter-decoration.left { left: 16px; }
+.letter-decoration.right { right: 16px; }
+.love-lines { margin-top: 26px; text-align: center; }
+.love-lines p { margin: 8px 0; font-family: Georgia, serif; font-weight: 800; color: #e83f78; text-shadow: 0 0 12px rgba(255,90,145,.42); }
+.love-lines p:first-child { font-size: clamp(1.25rem, 5vw, 2rem); }
+.love-lines p:nth-child(2) { font-size: clamp(1.05rem, 4vw, 1.55rem); }
+.love-lines p:nth-child(3) { font-size: clamp(1rem, 4vw, 1.45rem); }
+.love-lines p:last-child { color: #9d315a; letter-spacing: .06em; }
+
+.big-heart { margin: 26px 0 10px; font-size: clamp(4.5rem, 16vw, 7rem); filter: drop-shadow(0 12px 18px rgba(225,62,112,.28)); animation: bigHeartBeat 1.45s ease-in-out infinite; }
+.special-line { margin: 0 0 18px; text-align: center; font-family: "Great Vibes", "Noto Sans Devanagari", cursive; font-size: clamp(1.35rem, 5vw, 2rem); color: #a62d58; }
+.forgive-me-button {
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 999px;
+  padding: 14px 24px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ff91b7, #df3e75);
+  box-shadow: 0 14px 32px rgba(233,77,131,.28);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.forgive-me-button:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 18px 36px rgba(233,77,131,.34); }
+
+.popup-open { overflow: hidden; }
+.forgive-popup { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 20px; background: rgba(111,42,65,.25); backdrop-filter: blur(10px); }
+.forgive-popup[hidden] { display: none; }
+.popup-card { position: relative; width: min(430px, 100%); padding: 38px 24px 24px; text-align: center; border: 1px solid rgba(255,255,255,.92); border-radius: 28px; background: linear-gradient(145deg,#fff,#ffe8f1); box-shadow: 0 24px 70px rgba(116,42,67,.28); animation: popupIn .35s ease both; }
+.popup-close { position: absolute; top: 10px; right: 12px; width: 36px; height: 36px; border: 0; border-radius: 50%; color: #a62d58; background: white; cursor: pointer; font-size: 1.2rem; }
+.popup-heart { font-size: 3.2rem; animation: bigHeartBeat 1.3s ease-in-out infinite; }
+.popup-card p { font-family: "Great Vibes", "Noto Sans Devanagari", cursive; font-size: clamp(1.45rem, 7vw, 2rem); line-height: 1.45; }
+.popup-ok { border: 0; border-radius: 999px; padding: 11px 18px; color: white; cursor: pointer; font-family: inherit; font-weight: 800; background: linear-gradient(135deg,#ff91b7,#df3e75); }
+
+@keyframes lineFade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes softPulse { 50% { transform: scale(1.12); } }
+@keyframes bigHeartBeat { 0%,100% { transform: scale(1); } 20% { transform: scale(1.12); } 35% { transform: scale(.96); } 50% { transform: scale(1.08); } }
+@keyframes popupIn { from { opacity: 0; transform: scale(.88) translateY(18px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+@media (max-width: 600px) {
+  .memories-page { width: min(100% - 18px, 860px); padding-top: 66px; }
+  .memories-back { font-size: .78rem; padding: 8px 11px; }
+  .memory-letter { border-radius: 20px; }
+  .memory-line { line-height: 1.75; margin-bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }

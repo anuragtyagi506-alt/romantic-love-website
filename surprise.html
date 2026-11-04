@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>A Little Surprise For You ❤️</title>
+  <link rel="stylesheet" href="css/surprise.css" />
+</head>
+<body>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <main class="surprise-page">
+    <a class="back-button" href="index.html" aria-label="Back to website">← Back</a>
+
+    <header class="surprise-header">
+      <span class="gift">🎁</span>
+      <p>Just for you, My Love</p>
+      <h1>A Special Surprise ❤️</h1>
+    </header>
+
+    <section class="video-card" aria-label="Surprise video player">
+      <div id="video-area" class="video-area">
+        <video
+          id="surprise-video"
+          class="surprise-video"
+          autoplay
+          playsinline
+          webkit-playsinline
+          disablepictureinpicture
+          controlslist="nodownload noplaybackrate noremoteplayback"
+          preload="auto"
+          oncontextmenu="return false"
+        ></video>
+      </div>
+
+      <div id="missing-video" class="missing-video" hidden>
+        <div class="waiting-heart">❤️</div>
+        <h2>Your surprise is waiting for you ❤️</h2>
+        <p>Choose a video from your phone or computer to play it here.</p>
+        <button id="upload-button" class="upload-button" type="button">Upload Surprise Video</button>
+        <input id="video-upload" type="file" accept="video/mp4,video/webm,video/ogg,video/quicktime,.mp4,.webm,.ogv,.mov,.m4v" hidden />
+      </div>
+
+      <div class="video-controls" aria-label="Video controls">
+        <button id="video-mute" type="button" aria-label="Mute video">🔊</button>
+        <label class="volume-control" aria-label="Volume">
+          <span>Volume</span>
+          <input id="video-volume" type="range" min="0" max="1" step="0.05" value="1" />
+        </label>
+        <button id="video-fullscreen" type="button" aria-label="Enter fullscreen">⛶</button>
+      </div>
+    </section>
+
+    <p class="ending-message">Every memory with you is precious to me ❤️</p>
+    <a class="emotions-button" href="emotions.html">My Emotions ❤️</a>
+  </main>
+
+  <script src="js/surprise.js"></script>
+</body>
+</html>

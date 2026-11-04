@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A romantic surprise made with love for my princess."
+    />
+    <title>For My Princess ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Noto+Sans+Devanagari:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body class="login-active">
+    <div id="loader" class="loader" aria-live="polite">
+      <div class="heart-loader">❤</div>
+      <p>Preparing our little love story...</p>
+    </div>
+
+    <div class="bg-hearts" aria-hidden="true"></div>
+    <div class="rose-petals" aria-hidden="true"></div>
+    <div class="sparkles" aria-hidden="true"></div>
+
+    <div id="login-screen" class="login-screen">
+      <div class="login-card glass-panel">
+        <img class="rose-bloom" src="assets/images/roses.png" alt="Pink roses decoration" />
+        <div class="mini-heart">❤</div>
+        <h1>Welcome My Princess ❤️</h1>
+        <p class="subtitle">This little world is made only for you...</p>
+
+        <audio id="bg-music" preload="auto" autoplay aria-label="Background music">
+          <!-- The playlist starts with music1.mp3 and continues to music2.mp3. -->
+          <source src="assets/music/music1.mp3" type="audio/mpeg" />
+        </audio>
+
+        <form id="login-form" novalidate>
+          <label class="sr-only" for="password-input">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">❤</span>
+            <input
+              id="password-input"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              maxlength="10"
+              placeholder="DD/MM/YYYY"
+              aria-label="Password"
+            />
+          </div>
+          <p id="login-error" class="login-error" aria-live="polite"></p>
+          <button type="submit" class="heart-button">
+            <span>Login</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <main id="main-page" class="main-page" aria-live="polite">
+      <header class="topbar glass-panel">
+        <div class="brand-mark">My Love ❤️</div>
+      </header>
+
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">For you, always</p>
+          <h2>Hey My Love ❤️</h2>
+          <p class="subtitle">
+            Ek chhoti si koshish, tumhare chehre par smile lane ke liye... 
+          </p>
+          <div class="cta-row">
+            <a href="#sorry-message" class="primary-btn">Read my apology</a>
+            <a href="#letter" class="secondary-btn">Open my letter</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="teddy-card glass-panel">
+            <!-- Replace this with your own teddy bear artwork if needed. -->
+            <img src="assets/images/teddy-bear-updated.jpeg" alt="Cute teddy bear" />
+          </div>
+          <div class="floating-love love-one">❤</div>
+          <div class="floating-love love-two">❤</div>
+          <div class="floating-love love-three">❤</div>
+        </div>
+      </section>
+
+      <section id="sorry-message" class="section sorry-card glass-panel">
+        <p class="card-label">A little truth</p>
+        <h3>Sorry...</h3>
+        <p
+          class="typewriter"
+          data-text="मुझे पता है मैंने तुम्हें दुखी किया है और मुझे इसका बहुत अफ़सोस है। हमारी यादें मेरे लिए बहुत कीमती हैं, और मैं सब ठीक करना चाहता हूँ। प्लीज़, मुझे एक मौका दो।"
+        ></p>
+      </section>
+
+      <section id="letter" class="section letter-section">
+        <div class="letter-box">
+          <button class="envelope" type="button" aria-expanded="false" aria-label="Open love letter">
+            <span class="envelope-address">For You</span>
+            <span class="envelope-flap"></span>
+          </button>
+          <div class="letter-paper glass-panel" aria-live="polite">
+            <div class="letter-inner" contenteditable="true" spellcheck="false">
+              My love, I am truly sorry for the pain I caused you. I know my mistakes hurt you, and I am sorry from the depth of my heart. You mean so much to me, and I want to do better every single day. Please give me one chance to fix what was broken and to make you smile again. I love you more than words can say, and I will always choose you and our happiness.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section">
+        <div class="photo-panel glass-panel">
+          <div class="photo-frame">
+            <img src="assets/images/girlfriend-photo.jpg" alt="My favourite person" />
+            <span class="heart-ring heart-ring-left">❤</span>
+            <span class="heart-ring heart-ring-right">❤</span>
+          </div>
+          <p class="caption">You are my favourite person ❤️</p>
+        </div>
+      </section>
+
+      <section id="surprise" class="section surprise-card glass-panel">
+        <h3>Can you forgive me? 🥺❤️</h3>
+        <div class="decision-row">
+          <button id="forgive-btn" class="decision-btn yes-btn" type="button">
+            Yes, I forgive you ❤️
+          </button>
+          <button id="time-btn" class="decision-btn time-btn" type="button">
+            I need some time 💗
+          </button>
+          <a id="surprise-btn" class="decision-btn surprise-btn surprise-link" href="surprise.html" hidden>
+            Surprise 🎁
+          </a>
+        </div>
+        <div id="surprise-message" class="surprise-message" aria-live="polite"></div>
+      </section>
+
+      <div id="surprise-modal" class="surprise-modal" role="dialog" aria-modal="true" aria-labelledby="surprise-title" hidden>
+        <div class="surprise-modal-card">
+          <button id="surprise-close" class="surprise-close" type="button" aria-label="Close surprise">×</button>
+          <h3 id="surprise-title">A beautiful surprise for you 💗</h3>
+          <div class="surprise-video-wrap">
+            <video
+              id="surprise-video"
+              class="surprise-video"
+              src="assets/video/surprise.mp4?v=2"
+              controls
+              playsinline
+              webkit-playsinline
+              autoplay
+              preload="auto"
+              aria-label="Our romantic surprise video"
+            ></video>
+            <button id="surprise-video-play" class="surprise-video-play" type="button" aria-label="Play surprise video">▶</button>
+            <p id="surprise-video-error" class="surprise-video-error" role="alert" hidden>Video load nahi ho rahi. Please page refresh karein.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
